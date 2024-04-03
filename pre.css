@@ -1,0 +1,67 @@
+
+/* pre.css */
+
+body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3Y4ODAtdGVjaGktMDgtam9iNTk4LmpwZw.jpg'); /* Replace 'background-pattern.jpg' with your desired image */
+    background-size: cover;
+  }
+  
+  header {
+    background-color: tomato;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .main {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .cloth-stickers {
+    margin-bottom: 20px;
+  }
+  
+  .cloth-stickers img {
+    width: 150px;
+    margin: 0 70px;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .product {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+  }
+  
+  footer {
+    background-color: tomato;
+    padding: 20px;
+    text-align: center;
+  }
+  
