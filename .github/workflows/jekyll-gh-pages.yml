@@ -28,22 +28,42 @@ concurrency:
 #       - master
 #   pull_request:
 #     types: [opened, synchronize, reopened]
+# name: Build
+# on:
+#   push:
+#     branches:
+#       - master
+#   pull_request:
+#     types: [opened, synchronize, reopened]
 jobs:
-  # Build job
-  build:
+  sonarcloud:
+    name: SonarCloud
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
+      - uses: actions/checkout@v3
         with:
-          source: ./
-          destination: ./_site
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+# jobs:
+#   # Build job
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v4
+#       - name: Setup Pages
+#         uses: actions/configure-pages@v5
+#       - name: Build with Jekyll
+#         uses: actions/jekyll-build-pages@v1
+#         with:
+#           source: ./
+#           destination: ./_site
+#       - name: Upload artifact
+#         uses: actions/upload-pages-artifact@v3
         
   # Deployment job
   deploy:
