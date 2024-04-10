@@ -36,7 +36,7 @@
 // });
 
 
-
+console.log("pre.js loaded");
 document.addEventListener("DOMContentLoaded", function() {
   const productContainer = document.querySelector(".product-list");
 
